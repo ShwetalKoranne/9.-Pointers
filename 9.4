@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+
+
+void increment_val(int sal){
+    sal+=(0.2*sal);
+}
+
+void increment_ref(int &sal){
+    sal+=(0.2*sal);
+}
+
+int main(){
+
+    int proj, pub, prof, new_proj, salary;
+    
+    cout<<"Enter Salary of Employee: ";
+    cin>>salary;
+
+    cout<<"Enter the details as follows: "<<endl;
+    cout<<"Research Projects: ";
+    cin>>proj;
+    cout<<"Research Publications: ";
+    cin>>pub;
+    cout<<"Profit: ";
+    cin>>prof;
+    cout<<"New Project: ";
+    cin>>new_proj;
+
+
+    if (proj>0 && prof>100000 && new_proj>0 || proj>0 && prof>100000 && pub>0 || proj>0 && new_proj>0 && pub>0 || new_proj>0 && prof>100000 && pub>0)
+    {
+        increment_ref(salary);
+        cout<<"New Salary is: "<<salary;
+    }
+    else{
+        increment_val(salary);
+        cout<<"No increment! Salary is: "<<salary;
+    }
+    
+    return 0;
+
+}
+
+
+/*==========OUTPUTS==========
+Enter Salary of Employee: 50000
+Enter the details as follows: 
+Research Projects: 1
+Research Publications: 2
+Profit: 100000000
+New Project: 0
+New Salary is: 60000
+*/
